@@ -50,7 +50,7 @@ ln -s ~/.dotfiles/.zshrc ~/.zshrc
 
 ## License
 
-This repository is provided under the [LICENSE](LICENSE) and is open for personal use and customization.
+This repository is provided under the MIT [LICENSE](LICENSE) and is open for personal use and customization.
 
 Feel free to fork this repository and adapt it to your preferences. If you find any issues or have suggestions for improvements, please create an issue or a pull request.
 
