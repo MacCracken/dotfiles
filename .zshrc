@@ -17,12 +17,6 @@ then
   source ~/.functions.zsh
 fi
 
-# Include alias file (if present) containing aliases for ssh, etc.
-if [ -f ~/.aliases ]
-then
-  source ~/.aliases
-fi
-
 # LOCAL ENVIRONMENT VARS
 # VAGRANT DISKS beta
 export VAGRANT_EXPERIMENTAL="disks"
@@ -78,3 +72,9 @@ source /usr/local/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # Enable ColorLS to add some color to the command promt for directory commands
 source $(dirname $(gem which colorls))/tab_complete.sh
+
+# Include alias file (if present) containing aliases for ssh, etc.
+if [ -f ~/.aliases ]
+then
+  source ~/.aliases
+fi
