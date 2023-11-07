@@ -1,0 +1,9 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Robert MacCracken
+	email = robert.maccracken@gmail.com
+[github]
+	user = maccracken
+	email = robert.maccracken@gmail.com
+[init]
+	defaultBranch = main

@@ -1,0 +1,18 @@
+#
+# .aliases
+#
+# @author Robert MacCracken
+#
+
+# Aliases for ColorLS usage
+alias ll='colorls -lA --sd'
+alias ls='colorls -A --sd'
+alias lfiles='colorls -f'
+alias llfiles='colorls -lf'
+alias ldir='colorls -d'
+alias lldir='colorls -ld'
+
+# Personal
+alias brewcup="brew update && brew upgrade && brew cleanup"
+alias gorepo="cd $HOME/Repos/go_projects/src/github.com/MacCracken"
+alias repos='cd ~/Repos'
