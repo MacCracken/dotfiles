@@ -34,9 +34,8 @@ export GOPATH="$HOME/Repos/go_projects"
 export PATH="$PATH:$GOPATH/bin"
 
 # Ruby PATH
-#export PATH="$PATH:/usr/local/sbin"
-export PATH="$PATH:/usr/local/opt/ruby/bin"
-export PATH="$PATH:/usr/local/lib/ruby/gems/3.2.0/bin"
+export PATH="$PATH:/usr/local/sbin"
+export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.2.0/bin:$PATH"
 # export LDFLAGS="-L/usr/local/opt/ruby/lib"
 # export CPPFLAGS="-I/usr/local/opt/ruby/include"
 
@@ -72,7 +71,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+source /usr/local/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
