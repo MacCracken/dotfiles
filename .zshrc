@@ -23,9 +23,6 @@ then
   source ~/.aliases
 fi
 
-# Clear Screen and Display Banner
-#alias clr='clear && macbanner'
-
 # LOCAL ENVIRONMENT VARS
 # VAGRANT DISKS beta
 export VAGRANT_EXPERIMENTAL="disks"
