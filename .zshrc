@@ -17,6 +17,8 @@ then
   source ~/.functions.zsh
 fi
 
+neofetch
+
 # LOCAL ENVIRONMENT VARS
 # VAGRANT DISKS beta
 export VAGRANT_EXPERIMENTAL="disks"
