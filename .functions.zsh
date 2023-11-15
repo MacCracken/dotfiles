@@ -11,14 +11,14 @@ function banner {
   echo
 }
 
-function macbanner {
-    banner MACTOP
+function hostbanner {
+  banner $(hostname | sed 's/\.local$//')
 }
 
 function clr {
   clear
-  macbanner
+  hostbanner
 }
 
 # Show Banner
-macbanner
+hostbanner
