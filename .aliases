@@ -12,6 +12,9 @@ alias llfiles='colorls -lf'
 alias ldir='colorls -d'
 alias lldir='colorls -ld'
 
+# cat replacement
+alias cat="bat $@"
+
 # Personal
 alias brewcup="brew update && brew upgrade && brew cleanup"
 alias gorepo="cd $HOME/Repos/go_projects/src/github.com/MacCracken"
