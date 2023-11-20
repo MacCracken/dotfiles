@@ -22,6 +22,7 @@ neofetch
 # LOCAL ENVIRONMENT VARS
 # VAGRANT DISKS beta
 export VAGRANT_EXPERIMENTAL="disks"
+
 # ZSH home folder
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -46,34 +47,15 @@ export PATH="$PATH:$HOME/Library/Python/3.11/bin"
 # export PATH=$PATH:$ANDROID_HOME/tools/bin
 # export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-# oh-my-zsh settings
-# ZSH THEME
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# update automatically without asking
-zstyle ':omz:update' mode auto
-
-# Which plugins would you like to load?
-plugins=(
-  brew
-  docker
-  git
-  golang
-  kubectl
-  python
-  ruby
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-)
-
 source $ZSH/oh-my-zsh.sh
-source /usr/local/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Include alias file (if present) containing aliases for ssh, etc.
 if [ -f ~/.aliases ]
 then
   source ~/.aliases
 fi
+
+source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
