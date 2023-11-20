@@ -31,7 +31,7 @@ export PATH="$PATH:$GOPATH/bin"
 
 # Ruby PATH
 export PATH="$PATH:/usr/local/sbin"
-export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.2.0/bin:$PATH"
+# export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.2.0/bin:$PATH"
 # export LDFLAGS="-L/usr/local/opt/ruby/lib"
 # export CPPFLAGS="-I/usr/local/opt/ruby/include"
 
@@ -71,9 +71,6 @@ source /usr/local/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Enable ColorLS to add some color to the command promt for directory commands
-source $(dirname $(gem which colorls))/tab_complete.sh
 
 # Include alias file (if present) containing aliases for ssh, etc.
 if [ -f ~/.aliases ]

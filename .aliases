@@ -4,13 +4,13 @@
 # @author Robert MacCracken
 #
 
-# Aliases for ColorLS usage
-alias ll='colorls -lA --sd'
-alias ls='colorls -A --sd'
-alias lfiles='colorls -f'
-alias llfiles='colorls -lf'
-alias ldir='colorls -d'
-alias lldir='colorls -ld'
+# Aliases for exa usage
+alias ll='exa -lag --icons'
+alias l='exa -a --icons'
+alias lfiles='exa -F'
+alias llfiles='exa -lF'
+alias ldir='exa -d */'
+alias lldir='exa -ld */'
 
 # cat replacement
 alias cat="bat $@"
