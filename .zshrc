@@ -17,6 +17,8 @@ then
   source ~/.functions.zsh
 fi
 
+# Show Banner
+hostbanner
 neofetch
 
 # LOCAL ENVIRONMENT VARS
