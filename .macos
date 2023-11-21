@@ -54,7 +54,7 @@ if [[ "$RUN_AS_ROOT" = true ]]; then
 fi
 
 # Disable smart quotes as they’re annoying when typing code
-#defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # Disable smart dashes as they’re annoying when typing code
 #defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
