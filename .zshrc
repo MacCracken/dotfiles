@@ -49,6 +49,10 @@ export PATH="$PATH:$HOME/Library/Python/3.11/bin"
 # export PATH=$PATH:$ANDROID_HOME/tools/bin
 # export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+#ZSH Plugins
+plugins=(aliases git tmux) #aws azure rust golang docker-compose docker kubectl kubectlx vagrant vagrant-prompt teraform
+
+# Ohmyzsh Source
 source $ZSH/oh-my-zsh.sh
 
 # Include alias file (if present) containing aliases for ssh, etc.
