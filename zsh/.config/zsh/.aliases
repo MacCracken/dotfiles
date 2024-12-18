@@ -13,6 +13,7 @@ alias ldir='eza -d */'
 alias lldir='eza -ld */'
 
 alias grep="grep --color=auto"
+alias hostname="echo $HOST"
 
 # cat replacement
 alias cat="bat $@"
