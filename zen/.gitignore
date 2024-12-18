@@ -1,3 +1,4 @@
 .zen/macro/*
 
 !.zen/macro/chrome/
+!.zen/macro/user.js
