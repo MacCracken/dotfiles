@@ -1,12 +1,19 @@
 eval "$(starship init zsh)"
 
-# Include .env_vars file (if present) containing env vars for ssh, etc.
+# Include .setup file (if present) containing source files 
+# for zsh syntax highlighting and autosuggestions
+if [ -f ~/.config/zsh/.setup ]
+then
+  source ~/.config/zsh/.setup
+fi
+
+# Include .env_vars file (if present) containing env vars.
 if [ -f ~/.config/zsh/.env_vars ]
 then
   source ~/.config/zsh/.env_vars
 fi
 
-# Include alias file (if present) containing aliases for ssh, etc.
+# Include alias file (if present) containing aliases.
 if [ -f ~/.config/zsh/.aliases ]
 then 
   source ~/.config/zsh/.aliases
@@ -22,12 +29,8 @@ fi
 
 fastfetch
 
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
 bindkey -v
-
 zstyle :compinstall filename '/home/macro/.zshrc'
 autoload -Uz compinit
 compinit
+
