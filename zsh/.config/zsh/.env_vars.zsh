@@ -4,6 +4,7 @@
 # @author Robert MacCracken
 #
 # LOCAL ENVIRONMENT VARS
+XDG_CONFIG_HOME=~/.config
 
 # History Settings
 HISTFILE=~/.histfile
