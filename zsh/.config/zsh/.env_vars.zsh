@@ -4,15 +4,18 @@
 # @author Robert MacCracken
 #
 # LOCAL ENVIRONMENT VARS
-XDG_CONFIG_HOME=~/.config
+XDG_CONFIG_HOME="$HOME/.config"
 
 # History Settings
-HISTFILE=~/.histfile
+HISTFILE="$XDG_CONFIG_HOME/zsh/history/.histfile"
 HISTSIZE=1000
 SAVEHIST=1000
 
 # VAGRANT DISKS beta
 # export VAGRANT_EXPERIMENTAL="disks"
+
+# User Local Bins
+path+=("$HOME/usr/local/bin")
 
 # Rust Cargo Bin PATH
 path+=("$HOME/.cargo/bin")

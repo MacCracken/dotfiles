@@ -14,6 +14,7 @@ alias lldir='eza -ld */'
 
 alias grep="grep --color=auto"
 alias hostname="echo $HOST"
+alias vim='nvim'
 
 # cat replacement
 alias cat="bat $@"
