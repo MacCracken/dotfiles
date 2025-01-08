@@ -1,4 +1,6 @@
 # Ignores
 .DS_Store
 
+zsh/.config/zsh/history/*
 tmux/.config/tmux/plugins/*
+tmux/.config/tmux/history/*
