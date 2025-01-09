@@ -32,3 +32,9 @@ function fd() {
 function fh() {
   eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
 }
+
+function repos() {
+  local dir
+  dir=$(find . -type d -print0 | fzf --preview 'ls -l {}' --null) 
+  [[ -n "$dir"]] && cd "$HOME/Repos/$dir"
+}

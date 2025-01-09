@@ -1,4 +1,4 @@
-#
+
 # .aliases
 #
 # @author Robert MacCracken
@@ -22,4 +22,3 @@ alias cat="bat $@"
 # Personal
 #alias brewcup="brew update && brew upgrade && brew cleanup"
 #alias gorepo="cd $HOME/Repos/go_projects/src/github.com/MacCracken"
-alias repos='cd ~/Repos'
