@@ -34,7 +34,12 @@ function fh() {
 }
 
 function repos() {
+  home="$HOME/Repos"
   local dir
-  dir=$(find . -type d -print0 | fzf --preview 'ls -l {}' --null) 
-  [[ -n "$dir"]] && cd "$HOME/Repos/$dir"
+  if [ -z "$1" ]; then
+    cd $home
+  else
+    dir=$(find $home -type d -name "$1" -print0 -maxdepth 5)
+    [[ -n "$dir" ]] && cd "$dir"
+  fi
 }
