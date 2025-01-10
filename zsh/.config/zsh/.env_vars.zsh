@@ -5,6 +5,7 @@
 #
 # LOCAL ENVIRONMENT VARS
 XDG_CONFIG_HOME="$HOME/.config"
+EZA_CONFIG_DIR="$XDG_CONFIG_HOME/eza"
 
 # History Settings
 HISTFILE="$XDG_CONFIG_HOME/zsh/history/.histfile"

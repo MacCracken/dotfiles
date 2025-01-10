@@ -33,12 +33,14 @@ function fh() {
   eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
 }
 
+# repos - a function to goto Repos directory or subfolder using variable
 function repos() {
   home="$HOME/Repos"
   local dir
   if [ -z "$1" ]; then
     cd $home
   else
+    # do i want to also check if its a git repo; later
     dir=$(find $home -type d -name "$1" -print0 -maxdepth 5)
     [[ -n "$dir" ]] && cd "$dir"
   fi
