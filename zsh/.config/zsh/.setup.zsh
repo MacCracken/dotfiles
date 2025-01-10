@@ -15,5 +15,9 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 # Activate autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# Additional completitions
+source $(brew --prefix)/share/zsh/site-functions
+
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
+
