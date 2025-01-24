@@ -20,5 +20,8 @@ alias vim='nvim'
 alias cat="bat $@"
 
 # Personal
-alias brew-cup="brew update && brew upgrade && brew cleanup"
+if type brew &>/dev/null
+then
+  alias brew-cup="brew update && brew upgrade && brew cleanup"
+fi
 #alias gorepo="cd $HOME/Repos/go_projects/src/github.com/MacCracken"
