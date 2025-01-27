@@ -36,7 +36,6 @@ fi
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
-
 # Include .env_vars file (if present) containing env vars.
 if [ -f ~/.config/zsh/.env_vars.zsh ]
 then

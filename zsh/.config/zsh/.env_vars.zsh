@@ -18,8 +18,12 @@ SAVEHIST=1000
 # User Local Bins
 path+=("$HOME/usr/local/bin")
 
-# Rust Cargo Bin PATH
+# Rust Cargo Bin PATH and ENV Vars
 path+=("$HOME/.cargo/bin")
+if [ -f ~/.cargo/env ]
+then
+  source ~/.cargo/env
+fi
 
 # GOPATH and PATH update
 # export GOPATH="$HOME/Repos/go_projects"
