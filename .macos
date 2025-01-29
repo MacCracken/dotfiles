@@ -200,7 +200,7 @@ defaults write com.apple.universalaccess reduceTransparency -bool true
 # defaults write com.apple.dock wvous-br-corner -int 2
 # defaults write com.apple.dock wvous-br-modifier -int 0
 # Top right screen corner → Dektop
-defaults write com.apple.dock wvous-tr-corner -int 4
+defaults write com.apple.dock wvous-tr-corner -int 2
 defaults write com.apple.dock wvous-tr-modifier -int 0
 # Bottom left screen corner → Put Display to sleep
 # defaults write com.apple.dock wvous-bl-corner -int 10
