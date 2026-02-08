@@ -7,9 +7,14 @@ then
   source ~/.config/zsh/.setup.zsh
 fi
 
+source ~/.ssh/.api_keys
+
 fastfetch
 
 bindkey -v
 zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
+# opencode
+export PATH="$HOME/.local/bin:$HOME/.opencode/bin:$PATH"
+
