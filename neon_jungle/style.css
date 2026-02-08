@@ -1,0 +1,22 @@
+/* Waybar Neon Jungle Style */
+window#waybar {
+    background: rgba(10, 10, 15, 0.75); /* Deep night transparent */
+    border-bottom: 2px solid #00ffff;    /* Neon Cyan accent */
+    color: #ffffff;
+    font-family: "JetBrains Mono", "Roboto", sans-serif;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    color: #ff00ff; /* Magenta workspace icons */
+}
+
+#workspaces button.active {
+    color: #00ffff; /* Cyan for active workspace */
+    border-bottom: 2px solid #00ffff;
+}
+
+#clock, #battery, #cpu, #memory {
+    padding: 0 10px;
+    color: #00ffff;
+}
