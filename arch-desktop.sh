@@ -1,6 +1,7 @@
+## arch-desktop.sh
 ```bash
 #!/bin/bash
-# hyprland-workstation-setup.sh
+# arch-desktop.sh
 # Fresh Arch Linux → Secure Hyprland Workstation with Display Manager
 
 set -euo pipefail
@@ -218,7 +219,7 @@ maxretry = 3
 [sshd]
 enabled = true
 port = ssh
-logpath = /var/log/auth.log
+logpath = /var/log/secure
 maxretry = 3
 EOF
 
@@ -266,7 +267,7 @@ else
     warn "No install script found in dotfiles - manual linking may be needed"
 fi
 
-# Enable essential services (INCLUDING SDDM!)
+# Enable essential services
 log "🔄 Enabling system services..."
 sudo systemctl enable sddm          # Critical: graphical login
 sudo systemctl enable sshd
@@ -305,3 +306,4 @@ echo "   ✓ Docker security configured"
 echo "   ✓ SDDM display manager enabled"
 echo ""
 echo "🚀 Ready to rock! No more TTY prison - you'll get a proper login screen!"
+```
