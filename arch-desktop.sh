@@ -1,7 +1,7 @@
 ```bash
 #!/bin/bash
 # hyprland-workstation-setup.sh
-# Fresh Arch Linux → Secure Hyprland Workstation with Starship
+# Fresh Arch Linux → Secure Hyprland Workstation with Display Manager
 
 set -euo pipefail
 trap 'echo "❌ Setup failed at line $LINENO"' ERR
@@ -41,6 +41,9 @@ CORE_PACKAGES=(
     "hyprland" "waybar" "wofi" "kitty" "swww" "grim" "slurp" "wl-clipboard"
     "xdg-desktop-portal-hyprland" "polkit-kde-agent" "qt5-wayland" "qt6-wayland"
     
+    # Display manager and session management
+    "sddm" "qt5-graphicaleffects" "qt5-quickcontrols2" "qt5-svg"
+    
     # Development tools
     "docker" "docker-compose" "nodejs" "npm" "python" "python-pip"
     
@@ -60,6 +63,33 @@ CORE_PACKAGES=(
 
 log "📦 Installing core packages..."
 sudo pacman -S --needed --noconfirm "${CORE_PACKAGES[@]}"
+
+# Setup display manager for graphical login
+log "🖥️  Configuring SDDM display manager..."
+
+# Configure SDDM for Wayland
+sudo mkdir -p /etc/sddm.conf.d/
+sudo tee /etc/sddm.conf.d/10-wayland.conf << EOF
+[General]
+DisplayServer=wayland
+GreeterEnvironment=QT_WAYLAND_SHELL_INTEGRATION=layer-shell
+
+[Wayland]
+SessionDir=/usr/share/wayland-sessions
+
+[Theme]
+Current=breeze
+EOF
+
+# Ensure Hyprland session is available
+sudo mkdir -p /usr/share/wayland-sessions
+sudo tee /usr/share/wayland-sessions/hyprland.desktop << EOF
+[Desktop Entry]
+Name=Hyprland
+Comment=Hyprland compositor
+Exec=Hyprland
+Type=Application
+EOF
 
 # Install yay AUR helper
 if ! command -v yay &> /dev/null; then
@@ -236,8 +266,9 @@ else
     warn "No install script found in dotfiles - manual linking may be needed"
 fi
 
-# Enable essential services
+# Enable essential services (INCLUDING SDDM!)
 log "🔄 Enabling system services..."
+sudo systemctl enable sddm          # Critical: graphical login
 sudo systemctl enable sshd
 sudo systemctl enable NetworkManager
 sudo systemctl enable docker
@@ -264,12 +295,13 @@ echo "   4. 🔧 Test SSH access before closing current session"
 echo "   5. 🌟 Customize Starship config if needed (~/.config/starship.toml)"
 echo "   6. 🐳 Test Docker: docker run hello-world"
 echo "   7. 🌐 Configure ProtonMail Bridge if needed"
+echo "   8. 🖥️  Reboot to test SDDM graphical login"
 echo ""
 echo "🔒 Security features enabled:"
 echo "   ✓ UFW firewall active"
 echo "   ✓ SSH hardened"
 echo "   ✓ Fail2ban protecting SSH"
 echo "   ✓ Docker security configured"
+echo "   ✓ SDDM display manager enabled"
 echo ""
-echo "🚀 Ready to rock! Time for some weekend coding!"
-```
+echo "🚀 Ready to rock! No more TTY prison - you'll get a proper login screen!"
