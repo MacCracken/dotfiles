@@ -101,7 +101,7 @@ RedHatEnterprise = "󱄛"
 show_always = true
 style_user = "bg:text fg:base"
 style_root = "bg:text fg:base"
-format = '[  $user ]($style)'
+format = '[  $user ]($style)'
 
 [hostname]
 ssh_only = false
