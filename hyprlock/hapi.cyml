@@ -1,0 +1,19 @@
+[package]
+name = "hyprlock"
+version = "0.1.0"
+description = "hyprlock — lock screen; sources hyprmocha palette"
+
+[[link]]
+source = ".config/hypr/hyprlock.conf"
+target = ".config/hypr/hyprlock.conf"
+
+---
+
+# hyprlock
+
+One file. Sources `~/.config/hypr/mocha.conf` (the
+`hyprmocha` package) at runtime — link that one too or the
+`$mauve` / `$font` references fail to resolve. Bound to
+`SUPER_SHIFT + ESCAPE` in hyprland.conf.
+
+Shares `~/.config/hypr/`.

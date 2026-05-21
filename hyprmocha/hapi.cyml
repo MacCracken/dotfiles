@@ -1,0 +1,21 @@
+[package]
+name = "hyprmocha"
+version = "0.1.0"
+description = "hyprmocha — Catppuccin Mocha palette as hyprland $variables; sourced by hyprlock"
+
+[[link]]
+source = ".config/hypr/mocha.conf"
+target = ".config/hypr/mocha.conf"
+
+---
+
+# hyprmocha
+
+One file. Defines `$rosewater`, `$mauve`, `$peach`, ... as
+Hyprland variables (`rgb(...)` form). Pulled in via
+`source = $HOME/.config/hypr/mocha.conf` from `hyprlock.conf`
+today; `hyprland.conf` could pick it up the same way later if
+its hardcoded colors get unified.
+
+Shares `~/.config/hypr/` with hyprland, hyprpaper, hypridle,
+hyprlock.

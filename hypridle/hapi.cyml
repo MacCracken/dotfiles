@@ -1,0 +1,18 @@
+[package]
+name = "hypridle"
+version = "0.1.0"
+description = "hypridle — idle daemon; locks via hyprlock after 5 min"
+
+[[link]]
+source = ".config/hypr/hypridle.conf"
+target = ".config/hypr/hypridle.conf"
+
+---
+
+# hypridle
+
+One file. `lock_cmd = pidof hyprlock || hyprlock` — depends on
+the `hyprlock` package being linked + the binary on PATH.
+Started via `exec-once = ... & hypridle` in hyprland.conf.
+
+Shares `~/.config/hypr/`.
