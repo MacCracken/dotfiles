@@ -53,5 +53,5 @@ if [ -f ~/.config/zsh/.functions.zsh ]
 then 
   source ~/.config/zsh/.functions.zsh
   # Show Banner
-  hostbanner
+  #hostbanner
 fi

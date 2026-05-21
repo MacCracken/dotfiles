@@ -1,17 +1,17 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](text)\
+[](fg:text)\
 $username\
-[](fg:text bg:subtext1)\
+[](fg:text bg:subtext1)\
 $os\
 $hostname\
-[](fg:subtext1 bg:peach)\
+[](fg:subtext1 bg:peach)\
 $directory\
-[](fg:peach bg:green)\
+[](fg:peach bg:green)\
 $git_branch\
 $git_status\
-[](fg:green bg:teal)\
+[](fg:green bg:teal)\
 $c\
 $rust\
 $golang\
@@ -21,12 +21,15 @@ $java\
 $kotlin\
 $haskell\
 $python\
-[](fg:teal bg:blue)\
+[](fg:teal bg:blue)\
 $docker_context\
-[](fg:blue)\
+[](fg:blue bg:#228B22)\
 ${custom.cyrius_pkg}\
+[](fg:#228B22 bg:#87CEEB)\
 ${custom.cyrius}\
+[](fg:#87CEEB bg:purple)\
 $time\
+[ ](fg:purple)\
 $line_break$character"""
 
 palette = 'catppuccin_mocha'
@@ -192,12 +195,12 @@ disabled = false
 
 [character]
 disabled = false
-success_symbol = '[](bold fg:green)'
-error_symbol = '[](bold fg:red)'
-vimcmd_symbol = '[](bold fg:green)'
-vimcmd_replace_one_symbol = '[](bold fg:purple)'
-vimcmd_replace_symbol = '[](bold fg:purple)'
-vimcmd_visual_symbol = '[](bold fg:lavender)'
+success_symbol = '[❯](bold fg:green)'
+error_symbol = '[❯](bold fg:red)'
+vimcmd_symbol = '[❯](bold fg:green)'
+vimcmd_replace_one_symbol = '[❯](bold fg:purple)'
+vimcmd_replace_symbol = '[❯](bold fg:purple)'
+vimcmd_visual_symbol = '[❯](bold fg:lavender)'
 
 # ─── Cyrius prompt segments ──────────────────────────────────
 # Installed by `cyriusly cmdtools install starship`. Both blocks
