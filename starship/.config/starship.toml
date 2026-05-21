@@ -2,16 +2,16 @@
 
 format = """
 [](fg:lilac)\
-$username\
-[](fg:lilac bg:silver)\
+$username[]\
+(fg:lilac bg:silver)\
 $os\
-$hostname\
-[](fg:silver bg:gold)\
-$directory\
-[](fg:gold bg:emerald)\
+$hostname[]\
+(fg:silver bg:gold)\
+$directory[]\
+(fg:gold bg:emerald)\
 $git_branch\
-$git_status\
-[](fg:emerald bg:baby_blue)\
+$git_status[]\
+(fg:emerald bg:baby_blue)\
 $c\
 $rust\
 $golang\
@@ -20,16 +20,16 @@ $php\
 $java\
 $kotlin\
 $haskell\
-$python\
-[](fg:baby_blue bg:turquoise)\
-$docker_context\
-[](fg:turquoise bg:#228B22)\
-${custom.cyrius_pkg}\
-[](fg:#228B22 bg:#87CEEB)\
-${custom.cyrius}\
-[](fg:#87CEEB bg:amethyst)\
-$time\
-[ ](fg:amethyst)\
+$python[]\
+(fg:baby_blue bg:turquoise)\
+$docker_context[]\
+(fg:turquoise bg:#228B22)\
+${custom.cyrius_pkg}[]\
+(fg:#228B22 bg:#87CEEB)\
+${custom.cyrius}[]\
+(fg:#87CEEB bg:amethyst)\
+$time[ ]\
+(fg:amethyst)\
 $line_break$character"""
 
 palette = 'royal'
@@ -141,7 +141,7 @@ truncation_symbol = "…/"
 [git_branch]
 symbol = ""
 style = "bg:emerald"
-format = '[[ $symbol $branch ](fg:charcoal bg:emerald)]($style)'
+format = '[[ $symbol( $branch) ](fg:charcoal bg:emerald)]($style)'
 
 [git_status]
 style = "bg:emerald"
@@ -199,9 +199,10 @@ format = '[[ $symbol( $context) ](fg:charcoal bg:turquoise)]($style)'
 
 [time]
 disabled = false
+symbol = ""
 time_format = "%R"
 style = "bg:amethyst"
-format = '[[  $time ](fg:ivory bg:amethyst)]($style)'
+format = '[[ $time ](fg:ivory bg:amethyst)]($style)'
 
 [line_break]
 disabled = false
