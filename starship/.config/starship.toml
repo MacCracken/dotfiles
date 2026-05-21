@@ -1,10 +1,12 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](surface0)\
-$os\
+[](text)\
 $username\
-[](bg:peach fg:surface0)\
+[](fg:text bg:subtext1)\
+$os\
+$hostname\
+[](fg:subtext1 bg:peach)\
 $directory\
 [](fg:peach bg:green)\
 $git_branch\
@@ -71,7 +73,8 @@ crust = "#11111b"
 
 [os]
 disabled = false
-style = "bg:surface0 fg:text"
+style = "bg:subtext1 fg:base"
+format = "[ $symbol]($style)"
 
 [os.symbols]
 Windows = "󰍲"
@@ -96,9 +99,15 @@ RedHatEnterprise = "󱄛"
 
 [username]
 show_always = true
-style_user = "bg:surface0 fg:text"
-style_root = "bg:surface0 fg:text"
-format = '[ $user ]($style)'
+style_user = "bg:text fg:base"
+style_root = "bg:text fg:base"
+format = '[  $user ]($style)'
+
+[hostname]
+ssh_only = false
+disabled = false
+style = "bg:subtext1 fg:base"
+format = '[ $hostname ]($style)'
 
 [directory]
 style = "fg:mantle bg:peach"
@@ -176,7 +185,7 @@ format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
 disabled = false
 time_format = "%R"
 style = "bg:peach"
-format = '[[  $time ](fg:mantle bg:purple)]($style)'
+format = '[[  $time ](fg:mantle bg:purple)]($style)'
 
 [line_break]
 disabled = false
