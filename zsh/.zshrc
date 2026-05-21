@@ -28,8 +28,8 @@ fi
 
 source ~/.ssh/.api_keys
 
-# fastfetch — paused; will hard-replace with first-party tool.
 if type brew &>/dev/null
+then
   fastfetch
 else
   command -v iam >/dev/null && iam
