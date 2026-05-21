@@ -148,52 +148,52 @@ style = "bg:emerald"
 format = '[[($all_status$ahead_behind )](fg:charcoal bg:emerald)]($style)'
 
 [nodejs]
-symbol = ""
+symbol = ""
 style = "bg:baby_blue"
 format = '[[ $symbol( $version) ](fg:charcoal bg:baby_blue)]($style)'
 
 [c]
-symbol = ""
+symbol = ""
 style = "bg:baby_blue"
 format = '[[ $symbol( $version) ](fg:charcoal bg:baby_blue)]($style)'
 
 [rust]
-symbol = ""
+symbol = ""
 style = "bg:baby_blue"
 format = '[[ $symbol( $version) ](fg:charcoal bg:baby_blue)]($style)'
 
 [golang]
-symbol = ""
+symbol = ""
 style = "bg:baby_blue"
 format = '[[ $symbol( $version) ](fg:charcoal bg:baby_blue)]($style)'
 
 [php]
-symbol = ""
+symbol = ""
 style = "bg:baby_blue"
 format = '[[ $symbol( $version) ](fg:charcoal bg:baby_blue)]($style)'
 
 [java]
-symbol = ""
+symbol = ""
 style = "bg:baby_blue"
 format = '[[ $symbol( $version) ](fg:charcoal bg:baby_blue)]($style)'
 
 [kotlin]
-symbol = ""
+symbol = ""
 style = "bg:baby_blue"
 format = '[[ $symbol( $version) ](fg:charcoal bg:baby_blue)]($style)'
 
 [haskell]
-symbol = ""
+symbol = ""
 style = "bg:baby_blue"
 format = '[[ $symbol( $version) ](fg:charcoal bg:baby_blue)]($style)'
 
 [python]
-symbol = ""
+symbol = ""
 style = "bg:baby_blue"
 format = '[[ $symbol( $version) ](fg:charcoal bg:baby_blue)]($style)'
 
 [docker_context]
-symbol = ""
+symbol = ""
 style = "bg:turquoise"
 format = '[[ $symbol( $context) ](fg:charcoal bg:turquoise)]($style)'
 
