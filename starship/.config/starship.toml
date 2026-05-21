@@ -1,17 +1,17 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](fg:text)\
+[](fg:lilac)\
 $username\
-[](fg:text bg:subtext1)\
+[](fg:lilac bg:silver)\
 $os\
 $hostname\
-[](fg:subtext1 bg:peach)\
+[](fg:silver bg:gold)\
 $directory\
-[](fg:peach bg:green)\
+[](fg:gold bg:emerald)\
 $git_branch\
 $git_status\
-[](fg:green bg:teal)\
+[](fg:emerald bg:baby_blue)\
 $c\
 $rust\
 $golang\
@@ -21,62 +21,75 @@ $java\
 $kotlin\
 $haskell\
 $python\
-[](fg:teal bg:blue)\
+[](fg:baby_blue bg:turquoise)\
 $docker_context\
-[](fg:blue bg:#228B22)\
+[](fg:turquoise bg:#228B22)\
 ${custom.cyrius_pkg}\
 [](fg:#228B22 bg:#87CEEB)\
 ${custom.cyrius}\
-[](fg:#87CEEB bg:purple)\
+[](fg:#87CEEB bg:amethyst)\
 $time\
-[ ](fg:purple)\
+[ ](fg:amethyst)\
 $line_break$character"""
 
-palette = 'catppuccin_mocha'
+palette = 'royal'
 
-[palettes.gruvbox_dark]
-color_fg0 = '#fbf1c7'
-color_bg1 = '#3c3836'
-color_bg3 = '#665c54'
-color_blue = '#458588'
-color_aqua = '#689d6a'
-color_green = '#98971a'
-color_orange = '#d65d0e'
-color_purple = '#b16286'
-color_red = '#cc241d'
-color_yellow = '#d79921'
+# Royal palette — sourced from eggradients.com/shades/royal-colors
+[palettes.royal]
+purple     = "#7851A9"  # Royal Purple
+lilac      = "#C8A2C8"  # Royal Lilac
+silver     = "#C0C0C0"  # Royal Silver
+gold       = "#FADA5E"  # Royal Gold
+emerald    = "#50C878"  # Royal Emerald
+baby_blue  = "#89CFF0"  # Royal Baby Blue
+turquoise  = "#40E0D0"  # Royal Turquoise
+amethyst   = "#9966CC"  # Royal Amethyst
+sapphire   = "#0F52BA"  # Royal Sapphire
+indigo     = "#4B0082"  # Royal Indigo
+navy       = "#000080"  # Royal Navy
+forest     = "#228B22"  # Royal Forest Green (also bg of cyrius_pkg)
+sky        = "#87CEEB"  # Royal Sky Blue (also bg of cyrius)
+charcoal   = "#36454F"  # Royal Charcoal — dark text
+ivory      = "#FFFFF0"  # Royal Ivory — light text
+ruby       = "#DC143C"  # Royal Ruby — error
+rose_gold  = "#B76E79"  # Royal Rose Gold
+lavender   = "#E6E6FA"  # Royal Lavender
+# Aliases so the untouched cyrius blocks resolve (they reference fg:text / fg:base):
+text       = "#cdd6f4"  # light text — for fg:text on cyrius_pkg's dark green
+base       = "#1e1e2e"  # dark text  — for fg:base on cyrius' sky blue
 
+# Catppuccin Mocha — retained as fallback reference, not active.
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
-flamingo = "#f2cdcd"
-pink = "#f5c2e7"
-orange = "#cba6f7"
-red = "#f38ba8"
-maroon = "#eba0ac"
-peach = "#fab387"
-yellow = "#f9e2af"
-green = "#a6e3a1"
-teal = "#94e2d5"
-sky = "#89dceb"
-sapphire = "#74c7ec"
-blue = "#89b4fa"
-lavender = "#b4befe"
-text = "#cdd6f4"
-subtext1 = "#bac2de"
-subtext0 = "#a6adc8"
-overlay2 = "#9399b2"
-overlay1 = "#7f849c"
-overlay0 = "#6c7086"
-surface2 = "#585b70"
-surface1 = "#45475a"
-surface0 = "#313244"
-base = "#1e1e2e"
-mantle = "#181825"
-crust = "#11111b"
+flamingo  = "#f2cdcd"
+pink      = "#f5c2e7"
+orange    = "#cba6f7"
+red       = "#f38ba8"
+maroon    = "#eba0ac"
+peach     = "#fab387"
+yellow    = "#f9e2af"
+green     = "#a6e3a1"
+teal      = "#94e2d5"
+sky       = "#89dceb"
+sapphire  = "#74c7ec"
+blue      = "#89b4fa"
+lavender  = "#b4befe"
+text      = "#cdd6f4"
+subtext1  = "#bac2de"
+subtext0  = "#a6adc8"
+overlay2  = "#9399b2"
+overlay1  = "#7f849c"
+overlay0  = "#6c7086"
+surface2  = "#585b70"
+surface1  = "#45475a"
+surface0  = "#313244"
+base      = "#1e1e2e"
+mantle    = "#181825"
+crust     = "#11111b"
 
 [os]
 disabled = false
-style = "bg:subtext1 fg:base"
+style = "bg:silver fg:charcoal"
 format = "[ $symbol]($style)"
 
 [os.symbols]
@@ -102,18 +115,18 @@ RedHatEnterprise = "󱄛"
 
 [username]
 show_always = true
-style_user = "bg:text fg:base"
-style_root = "bg:text fg:base"
+style_user = "bg:lilac fg:charcoal"
+style_root = "bg:lilac fg:charcoal"
 format = '[  $user ]($style)'
 
 [hostname]
 ssh_only = false
 disabled = false
-style = "bg:subtext1 fg:base"
+style = "bg:silver fg:charcoal"
 format = '[ $hostname ]($style)'
 
 [directory]
-style = "fg:mantle bg:peach"
+style = "fg:charcoal bg:gold"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -126,81 +139,81 @@ truncation_symbol = "…/"
 "Developer" = "󰲋 "
 
 [git_branch]
-symbol = ""
-style = "bg:teal"
-format = '[[ $symbol $branch ](fg:base bg:green)]($style)'
+symbol = ""
+style = "bg:emerald"
+format = '[[ $symbol $branch ](fg:charcoal bg:emerald)]($style)'
 
 [git_status]
-style = "bg:teal"
-format = '[[($all_status$ahead_behind )](fg:base bg:green)]($style)'
+style = "bg:emerald"
+format = '[[($all_status$ahead_behind )](fg:charcoal bg:emerald)]($style)'
 
 [nodejs]
-symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+symbol = ""
+style = "bg:baby_blue"
+format = '[[ $symbol( $version) ](fg:charcoal bg:baby_blue)]($style)'
 
 [c]
-symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+symbol = ""
+style = "bg:baby_blue"
+format = '[[ $symbol( $version) ](fg:charcoal bg:baby_blue)]($style)'
 
 [rust]
-symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+symbol = ""
+style = "bg:baby_blue"
+format = '[[ $symbol( $version) ](fg:charcoal bg:baby_blue)]($style)'
 
 [golang]
-symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+symbol = ""
+style = "bg:baby_blue"
+format = '[[ $symbol( $version) ](fg:charcoal bg:baby_blue)]($style)'
 
 [php]
-symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+symbol = ""
+style = "bg:baby_blue"
+format = '[[ $symbol( $version) ](fg:charcoal bg:baby_blue)]($style)'
 
 [java]
-symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+symbol = ""
+style = "bg:baby_blue"
+format = '[[ $symbol( $version) ](fg:charcoal bg:baby_blue)]($style)'
 
 [kotlin]
-symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+symbol = ""
+style = "bg:baby_blue"
+format = '[[ $symbol( $version) ](fg:charcoal bg:baby_blue)]($style)'
 
 [haskell]
-symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+symbol = ""
+style = "bg:baby_blue"
+format = '[[ $symbol( $version) ](fg:charcoal bg:baby_blue)]($style)'
 
 [python]
-symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+symbol = ""
+style = "bg:baby_blue"
+format = '[[ $symbol( $version) ](fg:charcoal bg:baby_blue)]($style)'
 
 [docker_context]
-symbol = ""
-style = "bg:mantle"
-format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
+symbol = ""
+style = "bg:turquoise"
+format = '[[ $symbol( $context) ](fg:charcoal bg:turquoise)]($style)'
 
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:peach"
-format = '[[  $time ](fg:mantle bg:purple)]($style)'
+style = "bg:amethyst"
+format = '[[  $time ](fg:ivory bg:amethyst)]($style)'
 
 [line_break]
 disabled = false
 
 [character]
 disabled = false
-success_symbol = '[❯](bold fg:green)'
-error_symbol = '[❯](bold fg:red)'
-vimcmd_symbol = '[❯](bold fg:green)'
-vimcmd_replace_one_symbol = '[❯](bold fg:purple)'
-vimcmd_replace_symbol = '[❯](bold fg:purple)'
-vimcmd_visual_symbol = '[❯](bold fg:lavender)'
+success_symbol = '[❯](bold fg:emerald)'
+error_symbol = '[❯](bold fg:ruby)'
+vimcmd_symbol = '[❯](bold fg:emerald)'
+vimcmd_replace_one_symbol = '[❯](bold fg:amethyst)'
+vimcmd_replace_symbol = '[❯](bold fg:amethyst)'
+vimcmd_visual_symbol = '[❯](bold fg:lilac)'
 
 # ─── Cyrius prompt segments ──────────────────────────────────
 # Installed by `cyriusly cmdtools install starship`. Both blocks
