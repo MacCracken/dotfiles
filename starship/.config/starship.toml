@@ -139,7 +139,7 @@ truncation_symbol = "…/"
 "Developer" = "󰲋 "
 
 [git_branch]
-symbol = ""
+symbol = ""
 style = "bg:emerald"
 format = '[[ $symbol $branch ](fg:charcoal bg:emerald)]($style)'
 
