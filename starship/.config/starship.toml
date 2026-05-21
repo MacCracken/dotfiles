@@ -21,11 +21,10 @@ $haskell\
 $python\
 [](fg:teal bg:blue)\
 $docker_context\
-[](fg:blue bg:purple)\
-$time\
-[ ](fg:purple)\
+[](fg:blue)\
 ${custom.cyrius_pkg}\
 ${custom.cyrius}\
+$time\
 $line_break$character"""
 
 palette = 'catppuccin_mocha'
@@ -115,7 +114,7 @@ truncation_symbol = "…/"
 "Developer" = "󰲋 "
 
 [git_branch]
-symbol = ""
+symbol = ""
 style = "bg:teal"
 format = '[[ $symbol $branch ](fg:base bg:green)]($style)'
 
@@ -124,52 +123,52 @@ style = "bg:teal"
 format = '[[($all_status$ahead_behind )](fg:base bg:green)]($style)'
 
 [nodejs]
-symbol = ""
+symbol = ""
 style = "bg:teal"
 format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
 [c]
-symbol = " "
+symbol = ""
 style = "bg:teal"
 format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
 [rust]
-symbol = ""
+symbol = ""
 style = "bg:teal"
 format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
 [golang]
-symbol = ""
+symbol = ""
 style = "bg:teal"
 format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
 [php]
-symbol = ""
+symbol = ""
 style = "bg:teal"
 format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
 [java]
-symbol = " "
+symbol = ""
 style = "bg:teal"
 format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
 [kotlin]
-symbol = ""
+symbol = ""
 style = "bg:teal"
 format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
 [haskell]
-symbol = ""
+symbol = ""
 style = "bg:teal"
 format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
 [python]
-symbol = ""
+symbol = ""
 style = "bg:teal"
 format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
 [docker_context]
-symbol = ""
+symbol = ""
 style = "bg:mantle"
 format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
 
@@ -186,7 +185,7 @@ disabled = false
 disabled = false
 success_symbol = '[](bold fg:green)'
 error_symbol = '[](bold fg:red)'
-vimcmd_symbol = '[](bold fg:creen)'
+vimcmd_symbol = '[](bold fg:green)'
 vimcmd_replace_one_symbol = '[](bold fg:purple)'
 vimcmd_replace_symbol = '[](bold fg:purple)'
 vimcmd_visual_symbol = '[](bold fg:lavender)'
@@ -208,14 +207,14 @@ vimcmd_visual_symbol = '[](bold fg:lavender)'
 command = "cyrius-prompt-info pkg"
 when = "test -f cyrius.cyml"
 symbol = "ॐ"
-style = "fg:#228B22"
-format = '[[ $symbol $output ](fg:#228B22)]($style)'
+style = "fg:text bg:#228B22"
+format = '[ $symbol $output ]($style)'
 detect_files = ["cyrius.cyml"]
 
 [custom.cyrius]
 command = "cyrius-prompt-info tool"
 when = "test -f cyrius.cyml || test -f cyrius.toml"
 symbol = "🌀"
-style = "fg:#87CEEB"
-format = '[[ | $symbol $output ](fg:#87CEEB)]($style)'
+style = "fg:base bg:#87CEEB"
+format = '[ $symbol $output ]($style)'
 detect_files = ["cyrius.cyml", "cyrius.toml"]
