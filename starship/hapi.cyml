@@ -1,0 +1,25 @@
+[package]
+name = "starship"
+version = "0.1.0"
+description = "starship — prompt config (Catppuccin Mocha powerline + Cyrius segments)"
+
+[[link]]
+source = ".config/starship.toml"
+target = ".config/starship.toml"
+
+---
+
+# starship
+
+One file. Reconciled at adopt-time: the repo's elaborate
+Catppuccin Mocha powerline format merged with the on-disk
+Cyrius prompt segments installed by `cyriusly cmdtools install
+starship`. `${custom.cyrius_pkg}` and `${custom.cyrius}` are
+referenced from the `format` string so the segments actually
+render (starship's explicit format does not auto-include
+[custom.*] blocks).
+
+A reinstall via `cyriusly cmdtools install starship` may
+overwrite the powerline config — see the note in the toml
+itself. The dotfiles repo is the recovery path via git, plus
+the hapi audit trail for the local symlink state.

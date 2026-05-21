@@ -1,0 +1,14 @@
+[package]
+name = "wofi"
+version = "0.1.0"
+description = "wofi — application launcher config"
+
+[[link]]
+source = ".config/wofi/config"
+target = ".config/wofi/config"
+
+---
+
+# wofi
+
+One file.

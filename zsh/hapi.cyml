@@ -1,0 +1,41 @@
+[package]
+name = "zsh"
+version = "0.2.0"
+description = "zsh — shell config + zsh dir sources + BannerManor font"
+
+[[link]]
+source = ".zshrc"
+target = ".zshrc"
+
+[[link]]
+source = ".config/zsh/.setup.zsh"
+target = ".config/zsh/.setup.zsh"
+
+[[link]]
+source = ".config/zsh/.aliases.zsh"
+target = ".config/zsh/.aliases.zsh"
+
+[[link]]
+source = ".config/zsh/.env_vars.zsh"
+target = ".config/zsh/.env_vars.zsh"
+
+[[link]]
+source = ".config/zsh/.functions.zsh"
+target = ".config/zsh/.functions.zsh"
+
+[[link]]
+source = ".bannermanor/fonts/modular.flf"
+target = ".bannermanor/fonts/modular.flf"
+
+---
+
+# zsh
+
+Six links. `.zshrc` was reconciled at adopt-time — the merged
+copy in this package preserves both the repo's elaborate setup
+(autosuggest/compinit/api_keys/opencode PATH) and the
+maintainer's BannerManor + iam dogfood blocks and paused
+commandress precmd-hook fragment. fastfetch is commented out
+pending first-party replacement. The `modular.flf` figlet font
+moved from `.figlet/fonts/` to `.bannermanor/fonts/` once
+BannerManor became the first-party consumer.

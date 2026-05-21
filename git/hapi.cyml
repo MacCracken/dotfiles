@@ -1,0 +1,18 @@
+[package]
+name = "git"
+version = "0.1.0"
+description = "git — global gitconfig"
+
+[[link]]
+source = ".gitconfig"
+target = ".gitconfig"
+
+---
+
+# git
+
+One file. The repo `.gitconfig` is a strict superset of the
+typical fresh-install on-disk version (adds the `[github]`
+section). `~/.config/git/ignore` is intentionally NOT in
+this package — it carries a local-only `**/.claude/settings.local.json`
+pattern that doesn't belong in a shared dotfile repo.

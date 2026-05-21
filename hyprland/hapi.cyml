@@ -1,0 +1,32 @@
+[package]
+name = "hyprland"
+version = "0.1.0"
+description = "hyprland — compositor config (shares ~/.config/hypr with hyprpaper)"
+
+[[link]]
+source = ".config/hypr/hyprland.conf"
+target = ".config/hypr/hyprland.conf"
+
+---
+
+# hyprland
+
+One file. Reconciled at adopt-time: the May-19 fresh-install
+stock template (new wiki.hypr.land URLs, block windowrules,
+rounding_power, permissions/smart-gaps templates, working
+gesture binding, zoomFactor animation) merged with the
+maintainer's customizations carried over from the older
+repo file (HDMI monitor, `$browser` + `$menu` overrides,
+exec-once daemon line, dwindle.pseudotile, custom keybinds
+including hyprshot/hyprlock, 10%-step brightness).
+
+A tracking-note header in the file itself flags hyprland's
+tendency to rewrite the stock template every few releases —
+when the next fresh install drifts, re-audit via the same
+hapi-status + diff workflow used for this adoption.
+
+Shares `~/.config/hypr/` with the `hyprpaper` package (only
+that one file). The shared-namespace pattern works because
+hapi only owns explicit [[link]] rows — `hyprland.conf`
+belongs to this package, `hyprpaper.conf` to the other,
+neither touches the other.

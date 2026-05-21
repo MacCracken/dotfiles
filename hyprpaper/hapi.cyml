@@ -1,0 +1,18 @@
+[package]
+name = "hyprpaper"
+version = "0.1.0"
+description = "hyprpaper — wallpaper daemon config (shares ~/.config/hypr with hyprland)"
+
+[[link]]
+source = ".config/hypr/hyprpaper.conf"
+target = ".config/hypr/hyprpaper.conf"
+
+---
+
+# hyprpaper
+
+One file. Lives under `~/.config/hypr/` (the shared hyprland
+namespace) alongside `hyprland.conf`. When the `hyprland`
+package gets a manifest later, it'll add rows in the same
+target directory — no conflict, hapi only owns explicit
+[[link]] rows.

@@ -1,15 +1,15 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](surface0)\
+[](surface0)\
 $os\
 $username\
-[](bg:peach fg:surface0)\
+[](bg:peach fg:surface0)\
 $directory\
-[](fg:peach bg:green)\
+[](fg:peach bg:green)\
 $git_branch\
 $git_status\
-[](fg:green bg:teal)\
+[](fg:green bg:teal)\
 $c\
 $rust\
 $golang\
@@ -19,11 +19,13 @@ $java\
 $kotlin\
 $haskell\
 $python\
-[](fg:teal bg:blue)\
+[](fg:teal bg:blue)\
 $docker_context\
-[](fg:blue bg:purple)\
+[](fg:blue bg:purple)\
 $time\
-[ ](fg:purple)\
+[ ](fg:purple)\
+${custom.cyrius_pkg}\
+${custom.cyrius}\
 $line_break$character"""
 
 palette = 'catppuccin_mocha'
@@ -75,20 +77,20 @@ style = "bg:surface0 fg:text"
 [os.symbols]
 Windows = "󰍲"
 Ubuntu = "󰕈"
-SUSE = ""
+SUSE = ""
 Raspbian = "󰐿"
 Mint = "󰣭"
 Macos = "󰀵"
-Manjaro = ""
+Manjaro = ""
 Linux = "󰌽"
 Gentoo = "󰣨"
 Fedora = "󰣛"
-Alpine = ""
-Amazon = ""
-Android = ""
+Alpine = ""
+Amazon = ""
+Android = ""
 Arch = "󰣇"
 Artix = "󰣇"
-CentOS = ""
+CentOS = ""
 Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
@@ -107,13 +109,13 @@ truncation_symbol = "…/"
 
 [directory.substitutions]
 "Documents" = "󰈙 "
-"Downloads" = " "
+"Downloads" = " "
 "Music" = "󰝚 "
-"Pictures" = " "
+"Pictures" = " "
 "Developer" = "󰲋 "
 
 [git_branch]
-symbol = ""
+symbol = ""
 style = "bg:teal"
 format = '[[ $symbol $branch ](fg:base bg:green)]($style)'
 
@@ -122,52 +124,52 @@ style = "bg:teal"
 format = '[[($all_status$ahead_behind )](fg:base bg:green)]($style)'
 
 [nodejs]
-symbol = ""
+symbol = ""
 style = "bg:teal"
 format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
 [c]
-symbol = " "
+symbol = " "
 style = "bg:teal"
 format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
 [rust]
-symbol = ""
+symbol = ""
 style = "bg:teal"
 format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
 [golang]
-symbol = ""
+symbol = ""
 style = "bg:teal"
 format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
 [php]
-symbol = ""
+symbol = ""
 style = "bg:teal"
 format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
 [java]
-symbol = " "
+symbol = " "
 style = "bg:teal"
 format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
 [kotlin]
-symbol = ""
+symbol = ""
 style = "bg:teal"
 format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
 [haskell]
-symbol = ""
+symbol = ""
 style = "bg:teal"
 format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
 [python]
-symbol = ""
+symbol = ""
 style = "bg:teal"
 format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
 [docker_context]
-symbol = ""
+symbol = ""
 style = "bg:mantle"
 format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
 
@@ -175,16 +177,45 @@ format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
 disabled = false
 time_format = "%R"
 style = "bg:peach"
-format = '[[  $time ](fg:mantle bg:purple)]($style)'
+format = '[[  $time ](fg:mantle bg:purple)]($style)'
 
 [line_break]
 disabled = false
 
 [character]
 disabled = false
-success_symbol = '[](bold fg:green)'
-error_symbol = '[](bold fg:red)'
-vimcmd_symbol = '[](bold fg:creen)'
-vimcmd_replace_one_symbol = '[](bold fg:purple)'
-vimcmd_replace_symbol = '[](bold fg:purple)'
-vimcmd_visual_symbol = '[](bold fg:lavender)'
+success_symbol = '[](bold fg:green)'
+error_symbol = '[](bold fg:red)'
+vimcmd_symbol = '[](bold fg:creen)'
+vimcmd_replace_one_symbol = '[](bold fg:purple)'
+vimcmd_replace_symbol = '[](bold fg:purple)'
+vimcmd_visual_symbol = '[](bold fg:lavender)'
+
+# ─── Cyrius prompt segments ──────────────────────────────────
+# Installed by `cyriusly cmdtools install starship`. Both blocks
+# are referenced from the `format` string above (after the
+# powerline-close arrow, before $line_break) so they actually
+# render. Do not hand-edit the next two blocks; refresh with the
+# install command.
+#
+# Caveat: `cyriusly cmdtools install starship` may rewrite this
+# whole file with ONLY the Cyrius blocks (obliterating the
+# powerline config). If a future reinstall flattens the file,
+# `hapi rollback` walks back to the pre-flatten state, or
+# restore from git. Worth filing as a cyrius-tooling concern.
+
+[custom.cyrius_pkg]
+command = "cyrius-prompt-info pkg"
+when = "test -f cyrius.cyml"
+symbol = "ॐ"
+style = "fg:#228B22"
+format = '[[ $symbol $output ](fg:#228B22)]($style)'
+detect_files = ["cyrius.cyml"]
+
+[custom.cyrius]
+command = "cyrius-prompt-info tool"
+when = "test -f cyrius.cyml || test -f cyrius.toml"
+symbol = "🌀"
+style = "fg:#87CEEB"
+format = '[[ | $symbol $output ](fg:#87CEEB)]($style)'
+detect_files = ["cyrius.cyml", "cyrius.toml"]

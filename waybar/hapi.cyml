@@ -1,0 +1,30 @@
+[package]
+name = "waybar"
+version = "0.1.0"
+description = "waybar — status bar config, mocha + custom style"
+
+[[link]]
+source = ".config/waybar/config.jsonc"
+target = ".config/waybar/config.jsonc"
+
+[[link]]
+source = ".config/waybar/style.css"
+target = ".config/waybar/style.css"
+
+[[link]]
+source = ".config/waybar/mocha.css"
+target = ".config/waybar/mocha.css"
+
+[[link]]
+source = ".config/waybar/config.old"
+target = ".config/waybar/config.old"
+
+---
+
+# waybar
+
+Four files. `config.jsonc` and `style.css` are the live
+runtime config; `mocha.css` carries the Catppuccin Mocha
+palette imported by `style.css`; `config.old` is the
+upstream sample template kept as a reference for re-enabling
+commented-out modules.

@@ -1,0 +1,19 @@
+[package]
+name = "kitty"
+version = "0.1.0"
+description = "kitty terminal config"
+
+[[link]]
+source = ".config/kitty/kitty.conf"
+target = ".config/kitty/kitty.conf"
+
+[[link]]
+source = ".config/kitty/current-theme.conf"
+target = ".config/kitty/current-theme.conf"
+
+---
+
+# kitty
+
+Two-file package. Stow-convention layout — sources mirror the
+absolute target path under `.config/kitty/`.
