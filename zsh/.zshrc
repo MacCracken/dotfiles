@@ -7,7 +7,17 @@ export PATH="$HOME/.cyrius/bin:$PATH"
 # opencode
 export PATH="$HOME/.opencode/bin:$PATH"
 
-eval "$(starship init zsh)"
+if [ -f ~/.commandress ]
+then
+  setopt prompt_subst
+  _cmdrs_precmd() {
+    export AGNOSHI_LAST_EXIT=$?
+    PROMPT="$(cmdrs)"
+  }
+  precmd_functions+=(_cmdrs_precmd)
+else
+  eval "$(starship init zsh)"
+fi
 
 # Include .setup file (if present) containing source files
 # for zsh syntax highlighting and autosuggestions
@@ -19,26 +29,13 @@ fi
 source ~/.ssh/.api_keys
 
 # fastfetch — paused; will hard-replace with first-party tool.
-#fastfetch
+if type brew &>/dev/null
+  fastfetch
+else
+  command -v iam >/dev/null && iam
+fi
 
 bindkey -v
 zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
-
-# ─── Sibling-tool dogfood ────────────────────────────────────
-# BannerManor Test
-bnrmr "$(hostname | sed 's/\.local$//')"
-
-# iam — M5 dogfood (one release cycle, ~v0.5.0 → v0.9.0).
-# Per-interactive-shell, not just login: max exposure to spot
-# regressions / annoyances. Remove or move to ~/.zlogin if noisy.
-command -v iam >/dev/null && iam
-
-# commandress — paused; precmd hook reserved for re-enable.
-#setopt prompt_subst
-#_cmdrs_precmd() {
-#    export AGNOSHI_LAST_EXIT=$?
-#    PROMPT="$(cmdrs)"
-#}
-#precmd_functions+=(_cmdrs_precmd)

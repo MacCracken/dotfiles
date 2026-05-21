@@ -5,20 +5,25 @@
 #
 
 # Banner Setup
-#function banner {
-#  echo
-#  figlet -w $(tput cols) -c -f modular -d ~/.figlet/fonts $@ | lolcat
-#  echo
-#}
+function banner {
+  echo
+  if type brew &>/dev/null
+  then
+     figlet -w $(tput cols) -c -f modular -d ~/.figlet/fonts $@ | lolcat
+  else
+     bnrmr "$(hostname | sed 's/\.local$//')"
+  fi
+  echo
+}
 
-#function hostbanner {
-#  banner $(hostname | sed 's/\.local$//')
-#}
+function hostbanner {
+  banner $(hostname | sed 's/\.local$//')
+}
 
-#function clr {
-#  clear
-#  hostbanner
-#}
+function clr {
+  clear
+  hostbanner
+}
 
 # fd - cd to selected directory
 function fd() {
