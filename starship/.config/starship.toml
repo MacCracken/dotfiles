@@ -199,7 +199,6 @@ format = '[[ $symbol( $context) ](fg:charcoal bg:turquoise)]($style)'
 
 [time]
 disabled = false
-symbol = ""
 time_format = "%R"
 style = "bg:amethyst"
 format = '[[ $time ](fg:ivory bg:amethyst)]($style)'
