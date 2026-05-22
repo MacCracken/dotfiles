@@ -32,7 +32,18 @@ if type brew &>/dev/null
 then
   fastfetch
 else
-  command -v iam >/dev/null && iam
+  # Tip: if you only want this on actual login (not every new
+  # interactive shell — tmux panes, subshells, etc.), move this
+  # block to ~/.zlogin instead of ~/.zshrc.
+  if [[ $- == *i* ]] \
+      && command -v iam     >/dev/null 2>&1 \
+      && command -v anuenue >/dev/null 2>&1; then
+      if [[ -z $NO_COLOR ]]; then
+          iam | anuenue
+      else
+          iam
+      fi
+  fi
 fi
 
 bindkey -v

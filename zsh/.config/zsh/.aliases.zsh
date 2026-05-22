@@ -19,6 +19,13 @@ alias vim='nvim'
 # cat replacement
 alias cat="bat $@"
 
+# Generic "tint anything piped to me" — usage: `cmd | rainbow`
+# Equivalent to `cmd | anuenue` but composes nicely after a chain.
+if command -v anuenue >/dev/null 2>&1; then
+  alias rainbow='anueue'
+  alias rnbw='anuenue'
+fi
+
 # Personal
 if type brew &>/dev/null
 then
