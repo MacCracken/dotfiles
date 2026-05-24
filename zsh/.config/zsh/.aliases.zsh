@@ -4,13 +4,17 @@
 # @author Robert MacCracken
 #
 
-# Aliases for eza usage
-alias ll='eza -lag --icons'
-alias l='eza -a --icons'
-alias lfiles='eza -F'
-alias llfiles='eza -lF'
-alias ldir='eza -d */'
-alias lldir='eza -ld */'
+# Aliases for darshini (eza-equivalent in Cyrius; first-party AGNOS).
+# darshini default: shows hidden, icons on TTY, multi-column on TTY,
+# pipe → plain single-column. `-a`-equivalent semantics already
+# implicit, so no flag needed for hidden inclusion.
+# Full eza retirement at v1.1.1 (multi-path argv).
+alias ll='darshini -l --git'
+alias l='darshini'
+alias lfiles='darshini -F'
+alias llfiles='darshini -lF --git'
+alias ldir='darshini -d */'
+alias lldir='darshini -ld */'
 
 alias grep="grep --color=auto"
 alias hostname="echo $HOST"
