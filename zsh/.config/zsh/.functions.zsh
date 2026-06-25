@@ -9,7 +9,7 @@ function banner {
   echo
   if type brew &>/dev/null
   then
-     figlet -w $(tput cols) -c -f modular -d ~/.figlet/fonts $@ | lolcat
+     figlet -w $(tput cols) -c -f modular -d ~/.bannermanor/fonts $@ | lolcat
   else
      # Rainbow ASCII banner — usage: `banner AGNOS v1.0`
     if command -v bnrmr >/dev/null 2>&1 && command -v anuenue >/dev/null 2>&1; then
