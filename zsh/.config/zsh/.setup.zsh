@@ -4,19 +4,6 @@
 # @author Robert MacCracken
 #
 
-# Activate syntax highlighting
-if type brew &>/dev/null
-then
-  source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-else
-  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
-
-# Disable underline
-(( ${+ZSH_HIGHLIGHT_STYLES})) || typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[path]=none
-ZSH_HIGHLIGHT_STYLES[path_prefix]=none
-
 # Activate autosuggestions
 if type brew &>/dev/null
 then
@@ -55,3 +42,17 @@ then
   # Show Banner
   hostbanner
 fi
+
+# Activate syntax highlighting. Keep this last: loaded before autosuggestions
+# and fzf it silently highlights nothing.
+if type brew &>/dev/null
+then
+  source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+else
+  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+# Disable underline
+(( ${+ZSH_HIGHLIGHT_STYLES})) || typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[path]=none
+ZSH_HIGHLIGHT_STYLES[path_prefix]=none
